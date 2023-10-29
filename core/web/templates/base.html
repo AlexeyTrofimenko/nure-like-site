@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Навчально-наукова лабораторія «Моделювання когнітивних мозкоподібних структур»</title>
+    <style>
+        .content { display: none; }
+        .show { display: block; }
+    </style>
+
+</head>
+<body>
+
+<button onclick="changeLanguage('ua')">ua</button>
+<button onclick="changeLanguage('eng')">en</button>
+
+{% block content %}
+{% endblock %}
+
+<script>
+    function changeLanguage(lang) {
+        document.querySelectorAll('.content').forEach(function(el) {
+            el.classList.remove('show');
+        });
+        document.querySelectorAll('.' + lang).forEach(function(el) {
+            el.classList.add('show');
+        });
+    }
+
+    changeLanguage('ua');
+</script>
+
+</body>
+</html>
