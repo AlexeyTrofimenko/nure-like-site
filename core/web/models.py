@@ -6,7 +6,7 @@ class Page(models.Model):
 
     name_ukr = models.CharField(max_length=200)
     name_eng = models.CharField(max_length=200)
-    link = models.SlugField(unique=True)
+    link = models.SlugField(unique=True, blank=True)
     content_ukr = RichTextField()
     content_eng = RichTextField()
 
