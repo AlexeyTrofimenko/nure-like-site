@@ -1,10 +1,12 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group
+
 from .models import Page
 
 
 @admin.register(Page)
 class PageAdmin(admin.ModelAdmin):
+
     prepopulated_fields = {'link': ('name_eng',)}
 
     def formfield_for_dbfield(self, db_field, **kwargs):

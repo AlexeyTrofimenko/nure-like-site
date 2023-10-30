@@ -1,8 +1,9 @@
-from django.db import models
 from ckeditor.fields import RichTextField
+from django.db import models
 
 
 class Page(models.Model):
+
     name_ukr = models.CharField(max_length=200)
     name_eng = models.CharField(max_length=200)
     link = models.SlugField(unique=True)
