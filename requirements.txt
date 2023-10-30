@@ -1,3 +1,5 @@
+autopep8==2.0.4
 django==4.2.6
-flake8==6.1.0
 django-ckeditor==6.7.0
+django-tailwind==3.6.0
+flake8==6.1.0

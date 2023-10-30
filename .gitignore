@@ -29,6 +29,10 @@ db*.json
 **/migrations/*
 !**/migrations/__init__.py
 
+# Tailwind stuff
+node_modules
+theme/static/*
+
 # Scripts
 *.sh
 *.bat

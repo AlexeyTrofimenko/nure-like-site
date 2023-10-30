@@ -1,33 +1,23 @@
+{% load static %}
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="educational and scientific laboratory" />
+    <meta name="description" content="educational and scientific laboratory" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Навчально-наукова лабораторія «Моделювання когнітивних мозкоподібних структур»</title>
-    <style>
-        .content { display: none; }
-        .show { display: block; }
-    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;display=swap" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    {% tailwind_css %}
+  </head>
+  <body>
+    <main>
+      {% block content %}
 
-</head>
-<body>
-
-<button onclick="changeLanguage('ua')">ua</button>
-<button onclick="changeLanguage('eng')">en</button>
-
-{% block content %}
-{% endblock %}
-
-<script>
-    function changeLanguage(lang) {
-        document.querySelectorAll('.content').forEach(function(el) {
-            el.classList.remove('show');
-        });
-        document.querySelectorAll('.' + lang).forEach(function(el) {
-            el.classList.add('show');
-        });
-    }
-
-    changeLanguage('ua');
-</script>
-
-</body>
+      {% endblock %}
+    </main>
+  </body>
 </html>
