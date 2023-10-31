@@ -33,6 +33,9 @@ db*.json
 node_modules
 theme/static/*
 
+# Media
+media
+
 # Scripts
 *.sh
 *.bat
