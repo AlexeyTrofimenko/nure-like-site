@@ -12,8 +12,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;display=swap" />
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     {% tailwind_css %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
   </head>
   <body>
+    <header>
+      <button type="button" onclick="setLanguageUA()">ua</button>
+      <button type="button" onclick="setLanguageEN()">en</button>
+    </header>
     <main>
       {% block content %}
 
