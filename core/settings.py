@@ -18,7 +18,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
-    'ckeditor_uploader',
     'tailwind',
     'theme',
     'core.web',
@@ -91,10 +90,6 @@ TIME_ZONE = 'Europe/Kyiv'
 USE_I18N = True
 
 USE_TZ = True
-
-CKEDITOR_UPLOAD_PATH = 'content/'
-
-CKEDITOR_RESTRICT_BY_DATE = False
 
 STATIC_ROOT = BASE_DIR / 'assets'
 
