@@ -9,6 +9,10 @@ class Page(models.Model):
     link = models.SlugField(unique=True, blank=True)
     content_ukr = RichTextField()
     content_eng = RichTextField()
+    ordering = models.PositiveIntegerField(default=0, blank=False, null=False)
+
+    class Meta:
+        ordering = ['ordering']
 
     def __str__(self):
         return self.name_ukr

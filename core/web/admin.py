@@ -1,3 +1,4 @@
+from adminsortable2.admin import SortableAdminMixin
 from django.contrib import admin
 from django.contrib.auth.models import Group
 
@@ -5,7 +6,7 @@ from .models import Page
 
 
 @admin.register(Page)
-class PageAdmin(admin.ModelAdmin):
+class PageAdmin(SortableAdminMixin, admin.ModelAdmin):
 
     prepopulated_fields = {'link': ('name_eng',)}
 

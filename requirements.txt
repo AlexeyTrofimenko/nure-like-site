@@ -1,5 +1,7 @@
 autopep8==2.0.4
+cookiecutter==2.4.0
 django==4.2.6
+django-admin-sortable2==2.1.10
 django-ckeditor==6.7.0
 django-tailwind==3.6.0
 flake8==6.1.0
