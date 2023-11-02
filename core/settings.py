@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'adminsortable2',
     'ckeditor',
+    'ckeditor_uploader',
     'tailwind',
     'theme',
     'core.web',
@@ -83,6 +84,18 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'allowedContent': True,
+        'contentsCss': '/static/css/styles.css',
+    },
+}
+
+CKEDITOR_UPLOAD_PATH = 'content/'
+
+CKEDITOR_RESTRICT_BY_DATE = False
 
 LANGUAGE_CODE = 'uk'
 
