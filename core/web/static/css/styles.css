@@ -1,8 +1,71 @@
 * {
     color: #464646;
-    font-family: Open Sans,sans-serif;
+    font-family: Open Sans, sans-serif;
 }
 
 html {
     background-color: #ebebeb;
+}
+
+.content p {
+    text-indent: 2rem;
+}
+
+.content ul {
+    list-style-position: inside;
+    text-indent: 2rem;
+    padding: 0;
+}
+
+.content table p {
+    text-indent: 0;
+}
+
+.animatedBtn {
+    text-decoration: none;
+    background: -webkit-linear-gradient(right,#ebebeb 50%,#00465f 0);
+    background: linear-gradient(270deg,#ebebeb 50%,#00465f 0);
+    background-size: 246% 100%;
+    background-position: 100% 100%;
+    -webkit-transition:all .6s ease;
+    transition:all .6s ease;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    color: #00465f;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid #00465f;
+    padding: 9px 18px 11px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.animatedBtn:hover {
+    color: #fff;
+    background-position: 0;
+    text-decoration: none
+}
+
+.researcherLink {
+    color: #00465f;
+    text-decoration: none;
+    -webkit-transition: color .5s ease-in;
+    transition: color .5s ease-in;
+    font-size: .8rem;
+    margin-right: 0.8rem;
+}
+
+.researcherLink:hover {
+    color: #02def5;
+    text-decoration: underline;
+}
+
+.mailLink {
+    text-decoration: none;
+}
+
+.mailLink:hover {
+    text-decoration: underline;
 }

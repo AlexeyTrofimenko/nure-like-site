@@ -1,0 +1,168 @@
+{% load static %}
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="educational and scientific laboratory" />
+    <meta name="description" content="educational and scientific laboratory" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Навчально-наукова лабораторія «Моделювання когнітивних мозкоподібних структур»</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    {% tailwind_css %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+  </head>
+  <body class="m-0 p-0">
+    <div id="sideNav" class="h-full w-0 fixed z-10 top-0 left-0 bg-[#00465f] overflow-hidden pt-16 drop-shadow-[0_35px_35px_rgba(0,0,0,0.75)] transition-all duration-500">
+      <a href="javascript:void(0)" class="text-white no-underline absolute top-0 right-4 text-[36px] ml-[50px] hover:text-gray-300" onclick="closeNav()">&times;</a>
+      {% for nav_page in nav_pages %}
+        <a class="text-white no-underline uppercase p-4 text-[20px] font-semibold hover:bg-[#02def5] transition ease-in duration-500 cursor-pointer block" href="/{{ nav_page.link }}">
+          {% if lang == 'eng' %}
+            {{ nav_page.name_eng }}
+          {% else %}
+            {{ nav_page.name_ukr }}
+          {% endif %}
+        </a>
+      {% endfor %}
+      <div class="flex flex-col absolute bottom-20">
+        <a class="text-white no-underline hover:underline mx-4 my-2" href="https://nure.ua/">
+          {% if lang == 'eng' %}
+            NURE
+          {% else %}
+            ХНУРЕ
+          {% endif %}
+        </a>
+        <a class="text-white no-underline hover:underline mx-4 my-2" href="https://nure.ua/department/kafedra-programnoyi-inzheneriyi-pi">
+          {% if lang == 'eng' %}
+            SE Department
+          {% else %}
+            Кафедра ПІ
+          {% endif %}
+        </a>
+        <a class="text-white no-underline hover:underline mx-4 my-2" href="https://portal.dovira.eu/">
+          {% if lang == 'eng' %}
+            Higher education quality assurance portal
+          {% else %}
+            Портал забезпечення якості вищої освіти
+          {% endif %}
+        </a>
+      </div>
+    </div>
+    <div class="min-h-screen flex flex-col page">
+      <header class="">
+        <div class="grid grid-cols-12">
+          <div class="col-span-3 bg-white py-5 flex justify-center lg:justify-end">
+            <a href="/" class="no-underline items-center flex mx-2">
+              <img src="{% static 'img/logo.png' %}" alt="ХНУРЕ" />
+              <div class="hidden lg:inline-block mx-2.5 text-[#4a4f55] max-w-[200px] leading-none">
+                <p class="text-[27px] uppercase mt-0 mb-[2px] font-sans font-semibold">
+                  {% if lang == 'eng' %}
+                    NURE
+                  {% else %}
+                    ХНУРЕ
+                  {% endif %}
+                </p>
+                <span class="text-[10px]">
+                  {% if lang == 'eng' %}
+                    Kharkiv National University of Radio Electronics
+                  {% else %}
+                    Харківський національний університет радіоелектроніки
+                  {% endif %}
+                </span>
+              </div>
+            </a>
+          </div>
+          <div class="col-span-9 bg-[#00465f] flex items-center lg:items-end">
+            <div class="grid grid-cols-12 items-center w-[77rem] 2xl:w-[135dvh]">
+              <div class="lg:hidden col-span-2 sm:col-span-1 text-center">
+                <i class="fa fa-bars text-white cursor-pointer hover:text-gray-300" onclick="openNav()"></i>
+              </div>
+              <div class="hidden sm:block col-span-9 lg:col-span-11 pr-2">
+                <h1 class="font-normal text-white text-[1rem] pl-[0.4rem]">
+                  {% if lang == 'eng' %}
+                    Educational & Scientific Laboratory "Modeling of Cognitive Brain-Conformable Structures"
+                  {% else %}
+                    Навчально-наукова лабораторія «Моделювання когнітивних мозкоподібних структур»
+                  {% endif %}
+                </h1>
+              </div>
+              <div class="col-span-10 sm:col-span-2 lg:col-span-1 flex justify-end pr-2 lg:pr-0">
+                {% if lang == 'eng' %}
+                  <button type="button" class="border-none outline-none text-[#02738c] bg-[#00465f] font-semibold text-[16px] p-2 hover:text-[#02def5] transition ease-in duration-500 cursor-pointer" onclick="setLanguageUA()">ua</button>
+                  <button type="button" class="border-none outline-none text-[#02def5] bg-[#00465f] font-semibold text-[16px] p-2 hover:text-[#02def5] transition ease-in duration-500">en</button>
+                {% else %}
+                  <button type="button" class="border-none outline-none text-[#02def5] bg-[#00465f] font-semibold text-[16px] p-2 hover:text-[#02def5] transition ease-in duration-500">ua</button>
+                  <button type="button" class="border-none outline-none text-[#02738c] bg-[#00465f] font-semibold text-[16px] p-2 hover:text-[#02def5] transition ease-in duration-500 cursor-pointer" onclick="setLanguageEN()">en</button>
+                {% endif %}
+              </div>
+              <div class="hidden lg:block col-span-12">
+                <nav class="flex border-0 border-t-[1px] border-solid border-t-[#02def5]">
+                  {% for nav_page in nav_pages %}
+                    <a class="text-white no-underline uppercase px-[0.4rem] py-3 font-semibold hover:bg-[#02def5] transition ease-in duration-500 cursor-pointer" href="/{{ nav_page.link }}">
+                      {% if lang == 'eng' %}
+                        {{ nav_page.name_eng }}
+                      {% else %}
+                        {{ nav_page.name_ukr }}
+                      {% endif %}
+                    </a>
+                  {% endfor %}
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="container mx-auto flex">
+          <aside class="hidden lg:flex flex-col bg-[#00465f] box-border font-normal p-8 mt-8 min-w-[17rem] max-w-[17rem] h-fit">
+            <a class="text-white no-underline hover:underline" href="https://nure.ua/">
+              {% if lang == 'eng' %}
+                NURE
+              {% else %}
+                ХНУРЕ
+              {% endif %}
+            </a>
+            <a class="text-white no-underline hover:underline py-4" href="https://nure.ua/department/kafedra-programnoyi-inzheneriyi-pi">
+              {% if lang == 'eng' %}
+                SE Department
+              {% else %}
+                Кафедра ПІ
+              {% endif %}
+            </a>
+            <a class="text-white no-underline hover:underline" href="https://portal.dovira.eu/">
+              {% if lang == 'eng' %}
+                Higher education quality assurance portal
+              {% else %}
+                Портал забезпечення якості вищої освіти
+              {% endif %}
+            </a>
+          </aside>
+          <div class="mx-4 lg:mx-8 mt-1">
+            {% if lang == 'eng' %}
+              <h1 class="uppercase font-bold text-[2rem] text-[#00465f]">{{ page.name_eng }}</h1>
+              <div class="content">{{ page.content_eng|safe }}</div>
+            {% else %}
+              <h1 class="uppercase font-bold text-[2rem] text-[#00465f]">{{ page.name_ukr }}</h1>
+              <div class="content">{{ page.content_ukr|safe }}</div>
+            {% endif %}
+          </div>
+        </div>
+      </main>
+      <footer class="mt-auto">
+        <div class="bg-[#00465f] mt-10 p-4">
+          <p class="text-white text-center">
+            {% if lang == 'eng' %}
+              © Educational & Scientific Laboratory "Modeling of Cognitive Brain-Conformable Structures",{% now ' Y' %}
+            {% else %}
+              © Навчально-наукова лабораторія «Моделювання когнітивних мозкоподібних структур»,{% now ' Y' %}
+            {% endif %}
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
