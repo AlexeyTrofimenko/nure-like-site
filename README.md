@@ -36,18 +36,6 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-```
-npm install -D tailwindcsste
-```
-
-```
-npx tailwindcss init
-```
-
-```
-python manage.py tailwind install
-```
-
 ### Міграція бази даних
 
 ```
@@ -67,17 +55,37 @@ python manage.py createsuperuser
 > [!NOTE]
 > Використовується для роботи з адмін-панелью
 
+
 ### Компіляція CSS
 
 ```
 python manage.py tailwind start
 ```
 
-### Запуск серверу
+### Збір static файлів
+
+```
+python manage.py collectstatic
+```
+
+### Запуск локального серверу
 
 ```
 python manage.py runserver
 ```
+
+### Запуск серверу у режимі Production
+
+```
+pip install gunicorn
+```
+
+```
+gunicorn_django --bind yourdomain.com:8001
+```
+
+> [!WARNING]
+> Переконайтеся, що змінна DEBUG = False, а значення змінної SECRET_KEY приховано в core/settings.py
 
 ## Адміністрування
 
