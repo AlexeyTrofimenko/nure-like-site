@@ -4,7 +4,7 @@
 
 ![Site](https://i.imgur.com/LBmH63O.png)
 
-![Admin panel](https://i.imgur.com/zIJNeVT.png)
+![Admin panel](https://i.imgur.com/oZnlCub.png)
 
 ## Установка та запуск (Linux)
 
