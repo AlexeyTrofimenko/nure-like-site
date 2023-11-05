@@ -59,7 +59,7 @@ python manage.py createsuperuser
 ### Компіляція CSS
 
 ```
-python manage.py tailwind start
+python manage.py tailwind build
 ```
 
 ### Збір static файлів
@@ -75,17 +75,21 @@ python manage.py runserver
 ```
 
 ### Запуск серверу у режимі Production
-
 ```
 pip install gunicorn
 ```
 
 ```
-gunicorn_django --bind yourdomain.com:8001
+gunicorn -b yourip:port core.wsgi:application
 ```
 
 > [!WARNING]
-> Переконайтеся, що змінна DEBUG = False, а значення змінної SECRET_KEY приховано в core/settings.py
+> Переконайтеся, що yourip присутнє у ALLOWED_HOSTS, змінна DEBUG = False, а значення змінної SECRET_KEY приховано в core/settings.py
+
+### Посилання на інші ресурси
+<img src="https://www.vectorlogo.zone/logos/digitalocean/digitalocean-tile.svg" width="32"> [Розгортання на сервісі Digital ocean](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-local-django-app-to-a-vps)
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/2560px-Amazon_Web_Services_Logo.svg.png" width="32"> [Розгортання на сервісі Amazon AWS](https://aws.amazon.com/blogs/containers/deploy-and-scale-django-applications-on-aws-app-runner/)
 
 ## Адміністрування
 
