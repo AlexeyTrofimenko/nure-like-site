@@ -8,7 +8,7 @@
 
 ## Установка та запуск (Linux)
 
-Переконайтеся, що у вас встановлений Python версії **3.8** або новіше та `pip`.
+Переконайтеся, що у вас встановлений `python` версії **3.8** або новіше та `pip`.
 
 ```
 python --version
@@ -23,11 +23,11 @@ pip --version
 ### Створення та активація віртуального оточення
 
 ```
-python3 -m venv venv
+python -m venv env
 ```
 
 ```
-source venv/bin/activate
+source env/bin/activate
 ```
 
 ### Встановлення залежностей
@@ -76,15 +76,11 @@ python manage.py runserver
 
 ### Запуск серверу у режимі Production
 ```
-pip install gunicorn
-```
-
-```
-gunicorn -b yourip:port core.wsgi:application
+gunicorn -b host:port core.wsgi:application
 ```
 
 > [!WARNING]
-> Переконайтеся, що yourip присутнє у ALLOWED_HOSTS, змінна DEBUG = False, а значення змінної SECRET_KEY приховано в core/settings.py
+> Переконайтеся, що **host** присутній у ALLOWED_HOSTS, змінна DEBUG = False, а значення змінної SECRET_KEY приховано в core/settings.py. Змінні знаходяться у файлі .env
 
 ### Посилання на інші ресурси
 <img src="https://www.vectorlogo.zone/logos/digitalocean/digitalocean-tile.svg" width="32"> [Розгортання на сервісі Digital ocean](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-local-django-app-to-a-vps)

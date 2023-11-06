@@ -30,11 +30,14 @@ db*.json
 !**/migrations/__init__.py
 
 # Tailwind stuff
-node_modules
+node_modules/
 theme/static/*
 
 # Media
-media
+media/
+
+# Assets
+assets/
 
 # Scripts
 *.sh
